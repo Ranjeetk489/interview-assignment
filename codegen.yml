@@ -1,0 +1,5 @@
+schema: "https://graphql.anilist.co/"
+generates:
+  ./generated/animeql.json:
+    plugins:
+    - "@graphql-codegen/introspection"
