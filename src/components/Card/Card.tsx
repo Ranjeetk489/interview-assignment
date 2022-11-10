@@ -1,46 +1,41 @@
 import React from "react";
-import cardStyles from "./Card.module.css";
-type CardData = {
-	title: string;
+import styles from "./Card.module.scss";
+import CardGenre from "./CardGenre/CardGenre";
+
+export type CardData = {
+	title: { _typename: string; english: string };
 	bannerImage?: string;
 	genres?: string[];
 	averageScore?: string;
 	description?: string;
 };
 
-const Card: React.FC<CardData> = ({
-	title,
-	bannerImage,
-	genres,
-	averageScore,
-	description,
-}: CardData) => {
+type CardDataParam = {
+	cardData: CardData;
+};
+
+const Card: React.FC<CardDataParam> = ({ cardData }: CardDataParam) => {
+	const { title, bannerImage, genres, averageScore, description } = cardData;
+
 	return (
-		<div>
+		<div className={styles.cardContainer}>
 			<img src={bannerImage} alt="anime-image" />
 			<div className="card-body">
-				<div className="card-title">{title}</div>
-				{genres?.map((genre: string, idx: number) => {
-						return <CardGenre genre={genre} key={idx} />;
+				<div className="card-title">{title?.english}</div>
+				<div className={styles.genreContainer}>
+					{genres?.map((genre: string, idx: number) => {
+						return (
+							<div key={idx}>
+								<CardGenre genre={genre} key={idx} />
+							</div>
+						);
 					})}
-				<div className="card-desc">{description}</div>
-				<div className="card-score">{averageScore}</div>
+				</div>
+				{/* <div className="card-desc">{description}</div> */}
+				<div className="card-score">Average Score- {averageScore}</div>
 			</div>
 		</div>
 	);
 };
 
 export default Card;
-
-type CardGenreData = {
-	genre: string;
-	key: number;
-};
-
-const CardGenre: React.FC<CardGenreData> = ({ genre, key }: CardGenreData) => {
-	return (
-		<div className="genre-body" key={key}>
-			<span className="genre-title">{genre}</span>
-		</div>
-	);
-};

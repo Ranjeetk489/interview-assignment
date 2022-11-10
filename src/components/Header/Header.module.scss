@@ -1,0 +1,46 @@
+@import "../../styles/variables";
+
+.hrContainer{
+    display: flex;
+    gap: calc(100vw - 45vw);
+    justify-content: center;
+    align-items: center; 
+
+    & > h1 {
+        letter-spacing: 2px; 
+        color: $secondary-clr;  
+    }
+}
+
+.inputForm{
+    display: flex;
+    position: relative;
+    gap: 1rem;
+
+    & > input {
+        height:2rem;
+        border: none;
+        color: $tertiary-clr;
+        width: 16rem;
+        font-size: 1.2rem;
+        outline: none;
+        
+        &::placeholder{
+            font-weight: 700;
+            font-size: 1rem;
+        }
+        &:focus{
+            border-bottom: 1px solid $tertiary-clr;
+        }
+        
+    }
+    & > button {
+        position: absolute;
+        right:0;
+        top:5px;
+        color: $tertiary-clr;
+        background: none;
+        border: 0;
+        cursor: pointer;
+    }
+}

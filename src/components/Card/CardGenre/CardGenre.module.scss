@@ -1,0 +1,11 @@
+@import "../../../styles/variables";
+
+.genreBody{
+    font-size: 0.8rem;
+    padding: 4px 8px;
+    border: 1px solid $secondary-clr;  
+    border-radius: 8px;  
+    &:hover {
+        border: 1px solid $tertiary-clr
+    }
+}

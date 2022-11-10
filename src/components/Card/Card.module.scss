@@ -1,0 +1,19 @@
+.cardContainer {
+    height: 25rem;
+    width: 13rem;
+    margin-top: 2rem;
+    cursor: pointer;
+    & > img {
+        width: 12rem;
+        height: 13rem;
+        object-fit: cover;
+    }
+}
+
+.genreContainer {
+    display: inline-flex;
+    gap:8px;
+    flex-wrap: wrap;
+    margin: 8px 0;
+}
+
