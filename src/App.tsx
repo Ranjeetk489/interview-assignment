@@ -1,4 +1,4 @@
-import "./styles/global.scss";
+import "./common/styles/global.scss";
 import {
   createBrowserRouter,
   createRoutesFromElements,

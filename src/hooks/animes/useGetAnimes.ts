@@ -1,5 +1,4 @@
 import { gql, useQuery } from "@apollo/client";
-import { CardData } from "../../components/Card/Card";
 
 const GET_ANIMES = gql`
     query GET_ANIMES($page:Int, $perPage: Int ) {
@@ -18,10 +17,9 @@ const GET_ANIMES = gql`
 }
 `;
 
-export const useGetAnimes  = ()   => {
-	const {data} = useQuery(GET_ANIMES, {
-		variables: { page:2,perPage:10 } ,
+export const useGetAnimes = () => {
+	const { data } = useQuery(GET_ANIMES, {
+		variables: { page: 2, perPage: 10 },
 	});
 	return data?.Page?.media;
 };
-

@@ -1,5 +1,4 @@
 import React from "react";
-import { useLoaderData } from "react-router-dom";
 import Card, { CardData } from "../../components/Card/Card";
 import { useGetAnimes } from "../../hooks/animes/useGetAnimes";
 import styles from "./Home.module.scss";

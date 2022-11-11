@@ -1,4 +1,5 @@
 import React from "react";
+import BannerImage from "../BannerImage/BannerImage";
 import styles from "./Card.module.scss";
 import CardGenre from "./CardGenre/CardGenre";
 
@@ -19,7 +20,12 @@ const Card: React.FC<CardDataParam> = ({ cardData }: CardDataParam) => {
 
 	return (
 		<div className={styles.cardContainer}>
-			<img src={bannerImage} alt="anime-image" />
+			<div className={styles.imgContainer}>
+				<BannerImage
+					src={bannerImage}
+					alt="anime-image"
+				/>
+			</div>
 			<div className="card-body">
 				<div className="card-title">{title?.english}</div>
 				<div className={styles.genreContainer}>
